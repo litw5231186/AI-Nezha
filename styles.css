@@ -1,0 +1,294 @@
+:root {
+    --primary-color: #00bcd4; /* 科技蓝 */
+    --secondary-color: #ff4081; /* 动漫粉 */
+    --accent-color: #ffc107; /* 强调黄 */
+    --text-color: #e0e0e0;
+    --background-color: #1a1a1a;
+}
+
+body {
+    /* 背景图全屏固定 */
+    background-image: url('https://pica.zhimg.com/v2-5c46f98d98508aac12cf6cf2033ae69c_720w.jpg?source=172ae18b');
+    background-size: cover; /* 覆盖全屏 */
+    background-position: center; /* 居中显示 */
+    background-attachment: fixed; /* 滚动时背景固定 */
+    background-repeat: no-repeat; /* 禁止重复 */
+    
+    /* 基础文字样式 */
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* 添加半透明遮罩层，提升文字对比度 */
+main, header, footer {
+    background-color: rgba(255, 255, 255, 0.95); /* 95%透明度白色遮罩 */
+}
+header h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 3rem;
+    letter-spacing: 0.2em;
+    line-height: 1.5;
+    color: #007BFF;
+    text-shadow: 
+        0px 1px 2px rgba(0, 123, 255, 0.2),
+        0px 4px 8px rgba(0, 86, 179, 0.3);
+    background: linear-gradient(180deg, #87CEFA, #007BFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+header h1::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    margin-top: 8px;
+}
+
+header .lead {
+    color: #F0F8FF;
+    text-shadow: 0px 2px 4px rgba(0, 86, 179, 0.3);
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+}
+
+.card {
+    background-color: rgba(240, 248, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 86, 179, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 86, 179, 0.3);
+}
+
+.card-title {
+    color: #007BFF;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.card-text {
+    color: #0056B3;
+    line-height: 1.6;
+}
+    background: linear-gradient(45deg, #00bcd4, #0097a7);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+h1, h2, h3 {
+    color: var(--text-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0097a7;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 60px 0;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* 全局平滑滚动 */
+html {
+    scroll-behavior: smooth; /* 翻页/锚点跳转平滑 */
+}
+
+/* 卡片悬停慢动画 */
+.card {
+    transition: all 0.5s ease; /* 0.5秒缓慢过渡 */
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-8px); /* 悬停上移8px */
+    box-shadow: 0 4px 16px rgba(0, 123, 255, 0.2); /* 阴影加深 */
+}
+
+/* 导航栏平滑展开 */
+.navbar-collapse {
+    transition: all 0.3s ease; /* 菜单展开缓慢 */
+}
+
+#automation-guide .card {
+    background-color: rgba(255, 255, 255, 0.98); /* 比主卡片更通透 */
+    padding: 2rem;
+}
+
+#automation-guide h4 {
+    color: #0056B3; /* 辅色 */
+    font-weight: 500;
+}
+
+#automation-guide p {
+    color: #333; /* 深灰正文 */
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+#customer-radar-guide .card {
+    background-color: rgba(255, 255, 255, 0.98); /* 与自动化板块保持一致 */
+    padding: 2rem;
+}
+
+#customer-radar-guide h4 {
+    color: #0056B3; /* 辅色 */
+    font-weight: 500;
+}
+
+#customer-radar-guide .list-group-item,
+#customer-radar-guide .table {
+    background-color: transparent; /* 保持卡片内背景透明 */
+    border: none;
+}
+
+#customer-radar-guide .table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: rgba(0, 123, 255, 0.05); /* 主色浅背景 */
+}
+
+#quotation-guide .card {
+    background-color: rgba(255, 255, 255, 0.98); /* 与其他详细板块保持一致 */
+    padding: 2rem;
+}
+
+#quotation-guide h4 {
+    color: #0056B3; /* 辅色 */
+    font-weight: 500;
+}
+
+#quotation-guide .alert {
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+#quotation-guide pre {
+    color: #0056B3;
+    font-size: 0.95rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+#quotation-guide .list-group-item {
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem 0;
+}
+
+#price-master-guide .card {
+    background-color: rgba(255, 255, 255, 0.98); /* 与其他详细板块保持一致 */
+    padding: 2rem;
+}
+
+#price-master-guide h4 {
+    color: #0056B3; /* 辅色 */
+    font-weight: 500;
+}
+
+#price-master-guide pre {
+    background-color: rgba(0, 123, 255, 0.05); /* 主色浅背景 */
+    border-radius: 8px;
+    padding: 1rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+#price-master-guide .list-group-item {
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem 0;
+}
+
+#price-master-guide .btn-lg {
+    font-size: 1.1rem;
+    padding: 0.8rem 2rem;
+}
+
+#copywriting-guide .card {
+    background-color: rgba(255, 255, 255, 0.98); /* 与其他详细板块保持一致 */
+    padding: 2rem;
+}
+
+#copywriting-guide h4 {
+    color: #0056B3; /* 辅色 */
+    font-weight: 500;
+}
+
+#copywriting-guide .list-group-item {
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem 0;
+}
+
+#copywriting-guide .btn-lg {
+    font-size: 1.1rem;
+    padding: 0.8rem 2rem;
+}
+
+#data-magic-guide .card {
+    background-color: rgba(255, 255, 255, 0.98); /* 与其他详细板块保持一致 */
+    padding: 2rem;
+}
+
+#data-magic-guide h4 {
+    color: #0056B3; /* 辅色 */
+    font-weight: 500;
+}
+
+#data-magic-guide .list-group-item {
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem 0;
+}
+
+#data-magic-guide .btn-lg {
+    font-size: 1.1rem;
+    padding: 0.8rem 2rem;
+}
